@@ -1,0 +1,163 @@
+/* ========================================================================
+   Nik & Sons — Mobile responsive overrides
+   Targets inline-styled grids/layouts via attribute selectors.
+   Inline React styles render as `style="grid-template-columns: repeat(N, 1fr)"`
+   so we can match them with [style*="..."] selectors.
+   ======================================================================== */
+
+/* ── Tablet ≤ 1024px ─────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* Differentiator 12-col split: stack image above text */
+  [style*="grid-template-columns: repeat(12"] {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    margin-bottom: 80px !important;
+  }
+  [style*="grid-template-columns: repeat(12"] > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+  /* Stat band: 2 columns instead of 4 */
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
+  /* Footer 4-col → 2-col */
+  footer [style*="grid-template-columns: 1.2fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+  /* FounderNote / Contact split → stack */
+  [style*="grid-template-columns: 1.3fr 1fr"],
+  [style*="grid-template-columns: 1.2fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  /* Services grid 3-col → 2-col on tablet */
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  /* Services page 2-col stays */
+}
+
+/* ── Phone ≤ 760px ───────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  /* All multi-col grids collapse to single column */
+  [style*="grid-template-columns: repeat(2, 1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  /* Stats band: keep 2x2 even on phone — looks better than 4 stacked */
+  section [style*="grid-template-columns: repeat(4, 1fr)"][style*="gap: 32"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+  /* Footer stacks fully */
+  footer [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  /* Portfolio 12-col span-N items become single column */
+  [style*="grid-template-columns: repeat(12, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  [style*="grid-template-columns: repeat(12, 1fr)"] > * {
+    grid-column: 1 / -1 !important;
+  }
+  /* Portfolio filter tags: smaller pills, wrap nicely */
+  [style*="border-radius: 999px"] {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* ── Padding tightening ─────────────────────────────────────────── */
+  section {
+    /* Cut the 120/110/100/80 px section paddings ~40% */
+  }
+  [style*="padding: \"120px 0\""],
+  [style*="padding: 120px 0"] { padding: 60px 0 !important; }
+  [style*="padding: \"110px 0 120px\""],
+  [style*="padding: 110px 0 120px"] { padding: 56px 0 64px !important; }
+  [style*="padding: \"100px 0\""],
+  [style*="padding: 100px 0"] { padding: 56px 0 !important; }
+  [style*="padding: 96px 0 104px"] { padding: 56px 0 !important; }
+  [style*="padding: \"80px 0\""],
+  [style*="padding: 80px 0"] { padding: 48px 0 !important; }
+  [style*="padding: 160px 0"] { padding: 80px 0 !important; }
+  [style*="padding: \"60px 0 100px\""] { padding: 32px 0 56px !important; }
+
+  /* Container side padding */
+  [style*="padding: \"0 32px\""],
+  [style*="padding: 0 32px"] { padding: 0 20px !important; }
+  [style*="padding: \"140px 32px 80px\""] { padding: 110px 20px 56px !important; }
+  [style*="padding: \"180px 32px 100px\""] { padding: 130px 20px 64px !important; }
+  [style*="padding: \"0 32px 24px\""] { padding: 0 20px 20px !important; }
+
+  /* Hero: shrink min-height and font sizes */
+  section[style*="min-height: min(92vh, 860px)"] {
+    min-height: auto !important;
+  }
+  section[style*="min-height: min(92vh, 860px)"] > div[style*="position: relative"] {
+    min-height: auto !important;
+    padding-top: 110px !important;
+    padding-bottom: 64px !important;
+  }
+  /* Page header min-height */
+  section[style*="min-height: 480"] { min-height: auto !important; }
+
+  /* Hero promise row stacks */
+  [style*="display: flex"][style*="gap: 32"][style*="flex-wrap: wrap"] {
+    gap: 14px !important;
+  }
+
+  /* Newsletter form: stack input + button */
+  form[style*="max-width: 480"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  form[style*="max-width: 480"] > * {
+    width: 100% !important;
+  }
+
+  /* Contact form 2-col fields → 1-col */
+  form [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Process step connector line: hide on mobile */
+  [style*="position: absolute"][style*="top: 28"][style*="left: 16%"] {
+    display: none !important;
+  }
+
+  /* Lightbox close padding */
+  [style*="padding: 32"][style*="position: fixed"] {
+    padding: 16px !important;
+  }
+
+  /* Testimonial nav buttons + dots — keep tight */
+  [style*="gap: 24"][style*="justify-content: center"] {
+    gap: 14px !important;
+  }
+
+  /* Footer bottom row stacks */
+  footer [style*="justify-content: space-between"][style*="flex-wrap: wrap"] {
+    gap: 12px !important;
+  }
+}
+
+/* ── Tiny phone ≤ 420px ─────────────────────────────────────────────── */
+@media (max-width: 420px) {
+  /* Buttons: full width, stack */
+  .container > div > div [style*="display: flex"][style*="gap: 14"][style*="flex-wrap: wrap"] {
+    /* hero CTA row */
+    gap: 10px !important;
+  }
+  /* Smaller pill filter padding */
+  [style*="border-radius: 999px"] {
+    padding: 7px 12px !important;
+  }
+}

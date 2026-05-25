@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Titan Homes Group — Colors & Type
+   Base tokens for the Titan brand. Import into any HTML design.
+   Source of truth: titanhomesgroup/app/globals.css + layout.tsx
+   ========================================================================== */
+
+/* Font: Gantari (Google Fonts, weights 300–800) */
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Brand palette (DARK MODE — sampled from Konar Bros logo) ─────────── */
+  --logo-navy:     #1b2838;   /* exact navy from the logo artwork */
+  --navy:          #d8dde4;   /* "navy" role becomes pale ink on dark bg */
+  --navy-deep:     #0f1821;   /* deepest section bg */
+  --navy-darker:   #0a1018;   /* footer / deepest */
+  --lavender:      #253344;   /* elevated surface tint — cards, soft sections */
+  --lavender-hover:#324258;   /* borders / hover */
+  --ink:           #eef1f5;   /* primary text on dark */
+
+  /* ── Neutrals ──────────────────────────────────────────────── */
+  --white:         #ffffff;
+  --bg:            #1b2838;   /* page background = logo navy */
+  --muted:         #9aa4b2;   /* secondary text */
+  --gray-100:      #253344;
+  --gray-200:      #2d3d52;
+  --gray-300:      #3a4c64;
+  --gray-600:      #b5bdc8;   /* body copy on dark */
+  --gray-700:      #cfd5de;
+
+  /* ── Semantic surface tokens ──────────────────────────────── */
+  --surface:         var(--logo-navy);     /* page & card default */
+  --surface-alt:     var(--lavender);      /* elevated section background */
+  --surface-dark:    var(--navy-deep);     /* deeper section */
+  --surface-deeper:  var(--navy-darker);   /* footer / deepest */
+
+  /* ── Semantic text tokens ─────────────────────────────────── */
+  --fg:              var(--ink);
+  --fg-muted:        var(--muted);
+  --fg-on-navy:      rgba(255,255,255,0.90);
+  --fg-on-navy-soft: rgba(255,255,255,0.70);
+  --fg-on-navy-eyebrow: rgba(255,255,255,0.55);
+
+  /* ── Borders & dividers ───────────────────────────────────── */
+  --border:          var(--lavender-hover);
+  --border-on-navy:  rgba(255,255,255,0.15);
+  --border-on-navy-strong: rgba(255,255,255,0.30);
+
+  /* ── Accent — gold from card, readable on dark navy ── */
+  --accent:          #d8c98a;              /* card gold */
+  --accent-hover:    #e6d89a;
+  --on-accent:       var(--logo-navy);     /* navy text on gold CTA */
+
+  /* ── Filled navy slab (StatsBand etc.) uses deeper navy */
+  --ink-fill:        var(--navy-deep);
+
+  /* ── Type ─────────────────────────────────────────────────── */
+  --font-sans: 'Gantari', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-sans);
+
+  /* Base size scale (px) */
+  --fs-xs:    12px;
+  --fs-sm:    13px;      /* eyebrow */
+  --fs-body:  15px;      /* paragraph body */
+  --fs-base:  16px;      /* buttons, nav */
+  --fs-lg:    18px;
+  --fs-xl:    20px;      /* card h3 */
+  --fs-2xl:   24px;      /* h3 */
+  --fs-3xl:   30px;      /* h2 mobile */
+  --fs-4xl:   36px;      /* h2 desktop */
+  --fs-5xl:   48px;      /* h1 desktop */
+  --fs-hero:  56px;      /* hero headline */
+
+  --lh-tight: 1.1;
+  --lh-snug:  1.25;
+  --lh-body:  1.6;
+
+  /* Weights actually used in the codebase */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;   /* headings */
+  --fw-bold:     700;   /* eyebrow, CTAs */
+  --fw-extra:    800;   /* TITAN logo box */
+
+  --tracking-heading: -0.01em;
+  --tracking-eyebrow: 0.14em;
+  --tracking-wide:    0.1em;
+
+  /* ── Radii ────────────────────────────────────────────────── */
+  --radius-sm:  4px;
+  --radius:     6px;   /* default button, input */
+  --radius-md:  8px;   /* cards, panels */
+  --radius-lg:  12px;
+  --radius-pill: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────────────── */
+  --shadow-sm:  0 1px 2px 0 rgba(26,31,58,0.05);
+  --shadow:     0 4px 6px -1px rgba(26,31,58,0.10), 0 2px 4px -2px rgba(26,31,58,0.06);
+  --shadow-md:  0 10px 15px -3px rgba(26,31,58,0.10), 0 4px 6px -4px rgba(26,31,58,0.06);
+  --shadow-lg:  0 20px 25px -5px rgba(26,31,58,0.12), 0 8px 10px -6px rgba(26,31,58,0.08);
+  --shadow-2xl: 0 25px 50px -12px rgba(26,31,58,0.25);
+
+  /* ── Spacing (8-based, matches Tailwind) ──────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Container */
+  --container-max: 1280px;     /* Tailwind max-w-7xl */
+  --container-pad: 24px;
+}
+
+/* ==========================================================================
+   Semantic element defaults
+   ========================================================================== */
+
+body, .th-body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .th-display {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-heading);
+  color: inherit;               /* inherit from the section — allows white on navy */
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-semibold);
+}
+.th-display, .th-h1, .th-h2, .th-h3, .th-h4 { color: var(--ink); }
+
+.th-h1 { font-size: var(--fs-hero); line-height: 1.1; font-weight: var(--fw-semibold); }
+.th-h2 { font-size: var(--fs-4xl); line-height: 1.15; font-weight: var(--fw-semibold); }
+.th-h3 { font-size: var(--fs-2xl); line-height: 1.2; font-weight: var(--fw-semibold); }
+.th-h4 { font-size: var(--fs-xl); line-height: 1.25; font-weight: var(--fw-semibold); }
+
+.th-body-lg { font-size: var(--fs-lg); line-height: var(--lh-body); color: var(--fg); }
+.th-body    { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--fg); }
+.th-body-sm { font-size: var(--fs-sm); line-height: var(--lh-body); color: var(--fg-muted); }
+
+/* Eyebrow label — used above every section headline */
+.th-eyebrow, .eyebrow {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Buttons — three-button system
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: var(--on-accent);
+  font-weight: var(--fw-bold);
+  padding: 14px 28px; border-radius: var(--radius);
+  transition: background-color .15s ease;
+  min-height: 48px; font-size: var(--fs-base); border: 0;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+.btn-navy {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: var(--on-accent);
+  font-weight: var(--fw-bold);
+  padding: 14px 28px; border-radius: var(--radius);
+  transition: background-color .15s ease;
+  min-height: 48px; font-size: var(--fs-base); border: 0;
+}
+.btn-navy:hover { background: var(--accent-hover); }
+
+.btn-outline-white {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,0.7);
+  font-weight: var(--fw-bold);
+  padding: 12px 26px; border-radius: var(--radius);
+  transition: all .15s ease;
+  min-height: 48px; font-size: var(--fs-base);
+}
+.btn-outline-white:hover { background: #fff; color: var(--navy); }

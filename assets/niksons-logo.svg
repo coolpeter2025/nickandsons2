@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  
+  <rect width="200" height="200" fill="#0f2540"></rect>
+
+  
+  <g fill="none" stroke="#d8c98a" stroke-width="2.2" stroke-linejoin="miter" stroke-linecap="square">
+    
+    <path d="M 50 150 L 50 95 L 100 50 L 150 95 L 150 150 Z"></path>
+    
+    <path d="M 72 150 L 72 110 L 92 110 L 92 150"></path>
+    
+    <rect x="108" y="100" width="32" height="50"></rect>
+  </g>
+
+  
+  <defs>
+    <pattern id="stripes" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#d8c98a" stroke-width="1.4"></line>
+    </pattern>
+    <clipPath id="winClip">
+      <rect x="108" y="100" width="32" height="50"></rect>
+    </clipPath>
+  </defs>
+  <rect x="108" y="100" width="32" height="50" fill="url(#stripes)" clip-path="url(#winClip)"></rect>
+</svg>

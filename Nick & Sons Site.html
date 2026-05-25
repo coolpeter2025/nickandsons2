@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Nick &amp; Sons Handyman Services — Tampa Bay, FL</title>
+<link rel="stylesheet" href="styles/tokens.css?v=4"/>
+<link rel="stylesheet" href="styles/mobile.css?v=1"/>
+<link rel="stylesheet" href="styles/animations.css?v=1"/>
+<style>
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Gantari', system-ui, sans-serif; color: #1a1f3a; background: #fff;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+  *, *::before, *::after { box-sizing: border-box; }
+  button { -webkit-tap-highlight-color: transparent; }
+  @keyframes kb-fade { from { opacity: 0 } to { opacity: 1 } }
+
+  /* Accent color overrides (tweakable) */
+  body[data-accent="gold"] {
+    --accent: #d8c98a;
+    --accent-hover: #e6d89a;
+  }
+  body[data-accent="copper"] {
+    --accent: #c98c5a;
+    --accent-hover: #d99e6e;
+  }
+  body[data-accent="cream"] {
+    --accent: #efe8d2;
+    --accent-hover: #faf5e3;
+  }
+  body[data-accent="steel"] {
+    --accent: #a8c0d8;
+    --accent-hover: #c6d6e5;
+  }
+  /* Apply logo navy on hero/CTA backgrounds */
+  body { --hero-bg: #1b2838; }
+
+  /* Tweaks panel — dark */
+  .kb-tweaks {
+    position: fixed; right: 20px; bottom: 20px; z-index: 300;
+    background: #253344; border: 1px solid #324258; border-radius: 10px;
+    box-shadow: 0 20px 40px -12px rgba(0,0,0,.6);
+    padding: 18px 20px; width: 260px;
+    font-family: 'Gantari', system-ui, sans-serif;
+    display: none; color: #eef1f5;
+  }
+  .kb-tweaks.open { display: block; }
+  .kb-tweaks h4 { margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #eef1f5; }
+  .kb-tweaks .row { margin-bottom: 14px; }
+  .kb-tweaks .row-label { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #9aa4b2; margin-bottom: 8px; }
+  .kb-tweaks .swatches { display: flex; gap: 8px; }
+  .kb-tweaks .sw { width: 28px; height: 28px; border-radius: 14px; border: 2px solid transparent; cursor: pointer; }
+  .kb-tweaks .sw.active { border-color: #eef1f5; }
+</style>
+</head>
+<body data-accent="gold">
+<div id="app"></div>
+
+<!-- Tweaks panel (hidden by default, toggled via toolbar) -->
+<div class="kb-tweaks" id="kb-tweaks">
+  <h4>Tweaks</h4>
+  <div class="row">
+    <div class="row-label">Accent tone</div>
+    <div class="swatches" id="kb-accents">
+      <button class="sw active" data-accent="gold" style="background:#d8c98a" title="Gold (card)"></button>
+      <button class="sw" data-accent="copper" style="background:#c98c5a" title="Copper"></button>
+      <button class="sw" data-accent="cream" style="background:#efe8d2" title="Cream"></button>
+      <button class="sw" data-accent="steel" style="background:#a8c0d8" title="Steel blue"></button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row-label">Hero style</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="kb-hero-btn" data-hero="photo" style="padding:8px 12px;border-radius:4px;border:1px solid #324258;background:#1b2838;color:#eef1f5;font-family:inherit;font-size:12px;cursor:pointer">Photo</button>
+      <button class="kb-hero-btn" data-hero="editorial" style="padding:8px 12px;border-radius:4px;border:1px solid #324258;background:#1b2838;color:#eef1f5;font-family:inherit;font-size:12px;cursor:pointer">Editorial</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+
+<script type="text/babel" src="./src/data.jsx?v=10"></script>
+<script type="text/babel" src="./src/Header.jsx?v=10"></script>
+<script type="text/babel" src="./src/Sections.jsx?v=10"></script>
+<script type="text/babel" src="./src/Pages.jsx?v=10"></script>
+<script type="text/babel" src="./src/Modal.jsx?v=10"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+// Persisted tweak defaults — rewritten by host when users edit
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "gold",
+  "heroStyle": "photo"
+}/*EDITMODE-END*/;
+
+function App() {
+  const [route, setRoute] = useState(() => {
+    try { return localStorage.getItem("kb_route") || "home"; } catch { return "home"; }
+  });
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    try { localStorage.setItem("kb_route", route); } catch {}
+    window.scrollTo({ top: 0, behavior: "instant" });
+    window.dispatchEvent(new CustomEvent("nicksons:routechange"));
+  }, [route]);
+
+  const go = (r) => setRoute(r);
+  const openConsult = () => setModalOpen(true);
+  const closeConsult = () => setModalOpen(false);
+
+  const labelFor = (r) => {
+    if (r === "home") return "01 Home";
+    if (r === "about") return "02 About";
+    if (r === "services") return "03 Services";
+    if (r === "portfolio") return "04 Portfolio";
+    if (r === "locations") return "05 Locations";
+    if (r === "contact") return "06 Contact";
+    if (r.startsWith("service/")) return "03 Service Detail · " + r.split("/")[1];
+    return r;
+  };
+
+  let Page;
+  if (route === "home") Page = <window.HomePage onNavigate={go} openConsult={openConsult}/>;
+  else if (route === "about") Page = <window.AboutPage onNavigate={go} openConsult={openConsult}/>;
+  else if (route === "services") Page = <window.ServicesPage onNavigate={go} openConsult={openConsult}/>;
+  else if (route === "portfolio") Page = <window.PortfolioPage onNavigate={go} openConsult={openConsult}/>;
+  else if (route === "locations") Page = <window.LocationsPage onNavigate={go} openConsult={openConsult}/>;
+  else if (route === "contact") Page = <window.ContactPage onNavigate={go} openConsult={openConsult}/>;
+  else if (route.startsWith("service/")) {
+    const slug = route.split("/")[1];
+    Page = <window.ServiceDetailPage slug={slug} onNavigate={go} openConsult={openConsult}/>;
+  }
+  else Page = <window.HomePage onNavigate={go} openConsult={openConsult}/>;
+
+  return (
+    <div data-screen-label={labelFor(route)}>
+      <window.Header route={route} onNavigate={go} openConsult={openConsult}/>
+      <main>{Page}</main>
+      <window.Footer onNavigate={go}/>
+      <window.ConsultModal open={modalOpen} onClose={closeConsult}/>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("app")).render(<App/>);
+
+// ───────── GSAP-powered scroll reveal (replaces IntersectionObserver) ─────────
+(function setupGsap() {
+  if (!window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const animateBatch = (selector, opts) => {
+    if (reduceMotion) {
+      document.querySelectorAll(selector).forEach(el => el.classList.add("is-visible"));
+      return;
+    }
+    ScrollTrigger.batch(selector, {
+      start: "top 88%",
+      onEnter: (els) => {
+        els.forEach(el => el.classList.add("is-visible"));
+        gsap.fromTo(els, opts.from, {
+          ...opts.to,
+          stagger: opts.stagger || 0.08,
+          duration: opts.duration || 0.9,
+          ease: opts.ease || "power3.out",
+          overwrite: "auto",
+        });
+      },
+      once: true,
+    });
+  };
+
+  const wire = () => {
+    animateBatch(".reveal-up:not(.is-visible)", {
+      from: { opacity: 0, y: 36 }, to: { opacity: 1, y: 0 }, duration: 1.0,
+    });
+    animateBatch(".reveal-left:not(.is-visible)", {
+      from: { opacity: 0, x: -50 }, to: { opacity: 1, x: 0 }, duration: 1.1,
+    });
+    animateBatch(".reveal-right:not(.is-visible)", {
+      from: { opacity: 0, x: 50 }, to: { opacity: 1, x: 0 }, duration: 1.1,
+    });
+    animateBatch(".reveal-image:not(.is-visible)", {
+      from: { opacity: 0, clipPath: "inset(0 0 100% 0)" },
+      to: { opacity: 1, clipPath: "inset(0 0 0% 0)" },
+      duration: 1.3, ease: "power4.out",
+    });
+    animateBatch(".reveal-zoom:not(.is-visible)", {
+      from: { opacity: 0, scale: 1.08 },
+      to: { opacity: (i, el) => parseFloat(el.style.getPropertyValue("--reveal-zoom-opacity")) || 1, scale: 1 },
+      duration: 1.6, ease: "power2.out",
+    });
+
+    // Stagger: animate children inside .reveal-stagger
+    if (!reduceMotion) {
+      document.querySelectorAll(".reveal-stagger:not(.is-visible)").forEach(parent => {
+        ScrollTrigger.create({
+          trigger: parent, start: "top 85%", once: true,
+          onEnter: () => {
+            parent.classList.add("is-visible");
+            gsap.fromTo(parent.children,
+              { opacity: 0, y: 32 },
+              { opacity: 1, y: 0, duration: 0.7, stagger: 0.09, ease: "power3.out", overwrite: "auto" });
+          },
+        });
+      });
+    } else {
+      document.querySelectorAll(".reveal-stagger").forEach(el => el.classList.add("is-visible"));
+    }
+
+    // Shimmer (hero): use GSAP on the em
+    document.querySelectorAll(".reveal-shimmer:not(.is-visible)").forEach(host => {
+      host.classList.add("is-visible");
+      if (reduceMotion) return;
+      const em = host.querySelector("em");
+      if (em) {
+        gsap.fromTo(em,
+          { opacity: 0, letterSpacing: "0.06em" },
+          { opacity: 1, letterSpacing: "0em", duration: 1.4, delay: 0.25, ease: "power2.out" });
+      }
+    });
+  };
+
+  // Initial + on React mount + after any DOM change
+  const debouncedWire = () => {
+    clearTimeout(debouncedWire._t);
+    debouncedWire._t = setTimeout(wire, 80);
+  };
+
+  wire();
+  new MutationObserver(debouncedWire).observe(document.body, { childList: true, subtree: true });
+
+  // Re-refresh on route change (custom event we'll dispatch from App)
+  window.addEventListener("nicksons:routechange", () => {
+    setTimeout(() => { ScrollTrigger.refresh(); wire(); }, 100);
+  });
+})();
+
+// ───────── Tweaks plumbing ─────────
+(function setupTweaks() {
+  const apply = (edits) => {
+    if (edits.accent) {
+      document.body.setAttribute("data-accent", edits.accent);
+      document.querySelectorAll("#kb-accents .sw").forEach(b => {
+        b.classList.toggle("active", b.dataset.accent === edits.accent);
+      });
+    }
+    // heroStyle reserved for future use
+  };
+  // apply persisted defaults on load
+  apply(TWEAK_DEFAULTS);
+
+  const panel = document.getElementById("kb-tweaks");
+  window.addEventListener("message", (e) => {
+    if (!e.data) return;
+    if (e.data.type === "__activate_edit_mode") panel.classList.add("open");
+    if (e.data.type === "__deactivate_edit_mode") panel.classList.remove("open");
+  });
+  window.parent.postMessage({ type: "__edit_mode_available" }, "*");
+
+  document.querySelectorAll("#kb-accents .sw").forEach(b => {
+    b.addEventListener("click", () => {
+      const a = b.dataset.accent;
+      apply({ accent: a });
+      window.parent.postMessage({ type: "__edit_mode_set_keys", edits: { accent: a } }, "*");
+    });
+  });
+})();
+</script>
+</body>
+</html>

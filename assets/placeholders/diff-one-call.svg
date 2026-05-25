@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1120" width="1400" height="1120">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c3554"></stop>
+      <stop offset="1" stop-color="#0f2540"></stop>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#d8c98a" stroke-width="0.6" stroke-opacity="0.14"></path>
+    </pattern>
+  </defs>
+  <rect width="1400" height="1120" fill="url(#bg)"></rect>
+  <rect width="1400" height="1120" fill="url(#grid)"></rect>
+  
+  
+  <g transform="translate(560, 200)">
+    <rect x="0" y="0" width="280" height="380" rx="10" fill="#1c3554" stroke="#d8c98a" stroke-width="2.5"></rect>
+    <rect x="100" y="-12" width="80" height="34" rx="6" fill="#d8c98a"></rect>
+    <rect x="22" y="50" width="236" height="38" rx="4" fill="#d8c98a" fill-opacity="0.10" stroke="#d8c98a" stroke-opacity="0.35"></rect>
+    <rect x="22" y="105" width="236" height="38" rx="4" fill="#d8c98a" fill-opacity="0.10" stroke="#d8c98a" stroke-opacity="0.35"></rect>
+    <rect x="22" y="160" width="236" height="38" rx="4" fill="#d8c98a" fill-opacity="0.10" stroke="#d8c98a" stroke-opacity="0.35"></rect>
+    <rect x="22" y="215" width="236" height="38" rx="4" fill="#d8c98a" fill-opacity="0.10" stroke="#d8c98a" stroke-opacity="0.35"></rect>
+    <rect x="22" y="270" width="236" height="38" rx="4" fill="#d8c98a" fill-opacity="0.10" stroke="#d8c98a" stroke-opacity="0.35"></rect>
+    <rect x="22" y="325" width="236" height="38" rx="4" fill="#d8c98a" fill-opacity="0.10" stroke="#d8c98a" stroke-opacity="0.35"></rect>
+    
+    <g stroke="#d8c98a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 36 69 L 46 79 L 62 63"></path>
+      <path d="M 36 124 L 46 134 L 62 118"></path>
+      <path d="M 36 179 L 46 189 L 62 173"></path>
+      <path d="M 36 234 L 46 244 L 62 228"></path>
+      <path d="M 36 289 L 46 299 L 62 283"></path>
+      <path d="M 36 344 L 46 354 L 62 338"></path>
+    </g>
+    
+    <g fill="#f0e9d0" fill-opacity="0.55">
+      <rect x="80" y="64" width="140" height="10" rx="2"></rect>
+      <rect x="80" y="119" width="120" height="10" rx="2"></rect>
+      <rect x="80" y="174" width="155" height="10" rx="2"></rect>
+      <rect x="80" y="229" width="100" height="10" rx="2"></rect>
+      <rect x="80" y="284" width="135" height="10" rx="2"></rect>
+      <rect x="80" y="339" width="115" height="10" rx="2"></rect>
+    </g>
+  </g>
+  
+  <g transform="translate(700, 640)" fill="none" stroke="#d8c98a" stroke-width="2" stroke-opacity="0.5">
+    <circle r="38"></circle>
+    <circle r="56"></circle>
+  </g>
+  <text x="700" y="620" text-anchor="middle" fill="#d8c98a" font-family="&#39;Gantari&#39;, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="2">1 CREW</text>
+  <text x="700" y="1000" text-anchor="middle" fill="#d8c98a" font-family="&#39;Gantari&#39;, system-ui, sans-serif" font-size="14" font-weight="700" letter-spacing="3.5">NICK &amp; SONS</text>
+  <text x="700" y="1060" text-anchor="middle" fill="#f0e9d0" font-family="&#39;Gantari&#39;, system-ui, sans-serif" font-size="36" font-weight="600">One Call · One Crew</text>
+</svg>

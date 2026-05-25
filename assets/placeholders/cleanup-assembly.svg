@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1050" width="1400" height="1050">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c3554"></stop>
+      <stop offset="1" stop-color="#0f2540"></stop>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#d8c98a" stroke-width="0.6" stroke-opacity="0.18"></path>
+    </pattern>
+  </defs>
+  <rect width="1400" height="1050" fill="url(#bg)"></rect>
+  <rect width="1400" height="1050" fill="url(#grid)"></rect>
+  <g transform="translate(700,445)" fill="none" stroke="#d8c98a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M -50 30 L 50 30 L 40 70 L -40 70 Z"></path><path d="M -40 30 L -40 0 L 40 0 L 40 30"></path><path d="M -20 0 L -20 -50 L 20 -50 L 20 0"></path>
+  </g>
+  <text x="700" y="635" text-anchor="middle" fill="#f0e9d0" font-family="&#39;Gantari&#39;, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-0.5">Cleanup &amp; Assembly</text>
+  <text x="700" y="685" text-anchor="middle" fill="#d8c98a" font-family="&#39;Gantari&#39;, system-ui, sans-serif" font-size="16" font-weight="600" letter-spacing="3" text-transform="uppercase">Specialty</text>
+</svg>
