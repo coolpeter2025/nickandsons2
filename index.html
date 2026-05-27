@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Nick &amp; Sons Handyman Services — Tampa Bay, FL</title>
+<title>Nik &amp; Sons Handyman Services — Tampa Bay, FL</title>
 <link rel="stylesheet" href="styles/tokens.css?v=4"/>
 <link rel="stylesheet" href="styles/mobile.css?v=1"/>
 <link rel="stylesheet" href="styles/animations.css?v=1"/>
@@ -112,7 +112,7 @@ function App() {
   useEffect(() => {
     try { localStorage.setItem("kb_route", route); } catch {}
     window.scrollTo({ top: 0, behavior: "instant" });
-    window.dispatchEvent(new CustomEvent("nicksons:routechange"));
+    window.dispatchEvent(new CustomEvent("niksons:routechange"));
   }, [route]);
 
   const go = (r) => setRoute(r);
@@ -244,7 +244,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(<App/>);
   new MutationObserver(debouncedWire).observe(document.body, { childList: true, subtree: true });
 
   // Re-refresh on route change (custom event we'll dispatch from App)
-  window.addEventListener("nicksons:routechange", () => {
+  window.addEventListener("niksons:routechange", () => {
     setTimeout(() => { ScrollTrigger.refresh(); wire(); }, 100);
   });
 })();

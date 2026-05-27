@@ -8,7 +8,7 @@ function Logo({ dark = false, onClick, small = false }) {
       background: "none", border: 0, cursor: "pointer",
       display: "flex", alignItems: "center", gap: 14, padding: 0, color: "inherit",
     }}>
-      <img src="assets/niksons-logo.svg" alt="Nick & Sons Handyman Services"
+      <img src="assets/niksons-logo.svg" alt="Nik & Sons Handyman Services"
         style={{
           width: size, height: size, borderRadius: 6, display: "block",
           objectFit: "cover", background: "#0f2540",
@@ -20,7 +20,7 @@ function Logo({ dark = false, onClick, small = false }) {
           fontFamily: "var(--font-display)", textTransform: "uppercase",
           whiteSpace: "nowrap",
           textShadow: "0 1px 2px rgba(0,0,0,.35)",
-        }}>Nick &amp; Sons</div>
+        }}>Nik &amp; Sons</div>
         <div style={{
           fontSize: 10, fontWeight: 600, letterSpacing: ".22em",
           textTransform: "uppercase",

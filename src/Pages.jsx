@@ -60,9 +60,9 @@ function AboutPage({ onNavigate, openConsult }) {
   return (
     <div>
       <PageHeader
-        eyebrow="About Nick &amp; Sons"
+        eyebrow="About Nik &amp; Sons"
         title="Built by a *father and his sons* — not by a call center."
-        sub="Twelve years, 400+ Tampa Bay jobs, and a crew that still answers their own phones. Meet the family behind Nick &amp; Sons."
+        sub="Twelve years, 400+ Tampa Bay jobs, and a crew that still answers their own phones. Meet the family behind Nik &amp; Sons."
         image={IMG.team}
       />
       <section style={{ padding: "120px 0", background: "var(--surface)" }}>
@@ -72,7 +72,7 @@ function AboutPage({ onNavigate, openConsult }) {
             A father, his sons, and a tool truck.
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--gray-700)", marginBottom: 24 }}>
-            Nick started this business out of a single van in 2013, taking the
+            Nik started this business out of a single van in 2013, taking the
             small jobs other contractors didn't want — the patched drywall, the
             sticky door, the closet shelf that never sat level. Twelve years
             later he's still doing the work, only now with his sons on the
@@ -86,7 +86,7 @@ function AboutPage({ onNavigate, openConsult }) {
           </p>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--gray-700)", margin: 0 }}>
             If something on your list has been bothering you for months —
-            call, text, or email. Nick or one of the boys will pick up.
+            call, text, or email. Nik or one of the boys will pick up.
           </p>
         </div>
       </section>
@@ -102,7 +102,7 @@ function AboutPage({ onNavigate, openConsult }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
             {[
               { t: "Craft over speed", d: "Better to spend a full day on a wall than rush a finish you'll see every day for a decade." },
-              { t: "One number, one family", d: "No phone-tree, no sub-contracted surprises. Nick and his sons run the jobs themselves." },
+              { t: "One number, one family", d: "No phone-tree, no sub-contracted surprises. Nik and his sons run the jobs themselves." },
               { t: "Flat-priced, no surprises", d: "What you sign for is what you pay. We walk the project, write a flat number, and stand behind it." },
             ].map(v => (
               <div key={v.t} style={{ background: "var(--surface)", border: "1px solid var(--lavender-hover)", borderRadius: 8, padding: 32 }}>
@@ -177,7 +177,7 @@ function ServiceDetailPage({ slug, onNavigate, openConsult }) {
             <div>
               <p className="eyebrow" style={{ marginBottom: 16 }}>Scope</p>
               <h2 style={{ fontSize: "clamp(28px, 3vw, 38px)", fontWeight: 500, letterSpacing: "-0.02em", color: "var(--ink)", margin: "0 0 24px" }}>
-                What a Nick &amp; Sons {s.name.toLowerCase()} job looks like.
+                What a Nik &amp; Sons {s.name.toLowerCase()} job looks like.
               </h2>
               <p style={{ fontSize: 17, lineHeight: 1.75, color: "var(--gray-700)", marginBottom: 24 }}>
                 Every job starts with a free on-site walk-through and a flat
@@ -203,7 +203,7 @@ function ServiceDetailPage({ slug, onNavigate, openConsult }) {
                   Get a free on-site estimate.
                 </h3>
                 <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--gray-600)", margin: "0 0 20px" }}>
-                  Nick or one of the boys will come out, walk your project, and
+                  Nik or one of the boys will come out, walk your project, and
                   email you a flat price. No deposit, no pressure.
                 </p>
                 <button onClick={openConsult} style={{
@@ -221,7 +221,7 @@ function ServiceDetailPage({ slug, onNavigate, openConsult }) {
         <div className="container" style={{ padding: "0 32px", maxWidth: 1200 }}>
           <p className="eyebrow" style={{ textAlign: "center", marginBottom: 16 }}>More Services</p>
           <h3 style={{ textAlign: "center", fontSize: "clamp(24px, 2.6vw, 32px)", fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 40px" }}>
-            Explore other Nick &amp; Sons services.
+            Explore other Nik &amp; Sons services.
           </h3>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
             {SERVICES.filter(x => x.slug !== s.slug).map(x => (
@@ -367,7 +367,7 @@ function ContactPage() {
       <PageHeader
         eyebrow="Get in Touch"
         title="Request a *consultation.*"
-        sub="Tell us about your project. Nick or one of the boys will be in touch within one business day."
+        sub="Tell us about your project. Nik or one of the boys will be in touch within one business day."
         image={IMG.newsletter}
       />
       <section style={{ padding: "100px 0", background: "var(--surface)" }}>
@@ -381,7 +381,7 @@ function ContactPage() {
                   </h2>
                   <p style={{ fontSize: 16, color: "var(--gray-700)", margin: 0 }}>
                     We read every inquiry ourselves. Expect a call or email from
-                    Nick or one of the boys within one business day.
+                    Nik or one of the boys within one business day.
                   </p>
                 </div>
               ) : (

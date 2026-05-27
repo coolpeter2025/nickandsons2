@@ -1,13 +1,13 @@
 /* global window */
 
 // ============================================================
-// Nick & Sons Handyman Services — content
+// Nik & Sons Handyman Services — content
 // Family handyman business serving Tampa Bay and surrounding areas.
 // ============================================================
 
 const BRAND = {
-  name: "Nick & Sons",
-  full: "Nick & Sons Handyman Services",
+  name: "Nik & Sons",
+  full: "Nik & Sons Handyman Services",
   tagline: "Family-run handyman services across Tampa Bay and beyond.",
   license: "Licensed & Insured",
   phoneTampa: "(727) 967-4912",
@@ -20,8 +20,8 @@ const BRAND = {
   projects: "400+",
   awards: "Family-owned",
   features: "Licensed",
-  founder: "Nick & The Sons",
-  founderNote: "~Nick, Founder",
+  founder: "Nik & The Sons",
+  founderNote: "~Nik, Founder",
 };
 
 const PROMISE = [
@@ -46,7 +46,7 @@ const DIFFS = [
   {
     kicker: "Treated like family, because we are one.",
     title: "A father-and-sons crew that *shows up.*",
-    body: "Nick trained the boys himself — every cut, every repair, every cleanup. You'll never wonder who's pulling into your driveway. The same faces show up, on time, with shoes off and drop cloths down. We've been doing this in Pinellas for over a decade, and we plan to keep doing it for the next one.",
+    body: "Nik trained the boys himself — every cut, every repair, every cleanup. You'll never wonder who's pulling into your driveway. The same faces show up, on time, with shoes off and drop cloths down. We've been doing this in Pinellas for over a decade, and we plan to keep doing it for the next one.",
     img: "assets/placeholders/diff-family.svg",
   },
 ];
@@ -126,29 +126,29 @@ const STATS = [
 
 const TESTIMONIALS = [
   {
-    quote: "Nick fixed in one morning what three other guys wouldn't even quote.",
-    body: "I had a list of seven small things — drywall hole, sticky bedroom door, a torn screen, two ceiling fans, baseboard separating from the wall, plus a busted closet shelf. Nick and one of his sons came out, gave me a flat price on the spot, and knocked it all out in about four hours. Cleaned up like they were never here. We'll be calling them every time something pops up.",
+    quote: "Nik fixed in one morning what three other guys wouldn't even quote.",
+    body: "I had a list of seven small things — drywall hole, sticky bedroom door, a torn screen, two ceiling fans, baseboard separating from the wall, plus a busted closet shelf. Nik and one of his sons came out, gave me a flat price on the spot, and knocked it all out in about four hours. Cleaned up like they were never here. We'll be calling them every time something pops up.",
     author: "Karen S.",
     location: "Seminole, FL",
     service: "General Handyman",
   },
   {
     quote: "Quoted exactly what they charged. Refreshing.",
-    body: "Asked for a quote on painting the whole interior of our condo plus replacing two interior doors. Nick came out the next morning, measured everything, emailed me a flat price that afternoon, and started Monday. Final invoice matched the quote to the dollar. The boys are polite, on time, and clearly know what they're doing.",
+    body: "Asked for a quote on painting the whole interior of our condo plus replacing two interior doors. Nik came out the next morning, measured everything, emailed me a flat price that afternoon, and started Monday. Final invoice matched the quote to the dollar. The boys are polite, on time, and clearly know what they're doing.",
     author: "Ralph &amp; Marie D.",
     location: "St. Petersburg, FL",
     service: "Painting + Doors",
   },
   {
     quote: "Treats every house like it's his own.",
-    body: "We've had Nick out three times now — once for flooring in the guest bedroom, once for trim work after a remodel, and once just to assemble a stack of Wayfair furniture. Every visit he wears shoe covers without being asked, lays down drop cloths, and leaves the place cleaner than he found it. That's rare.",
+    body: "We've had Nik out three times now — once for flooring in the guest bedroom, once for trim work after a remodel, and once just to assemble a stack of Wayfair furniture. Every visit he wears shoe covers without being asked, lays down drop cloths, and leaves the place cleaner than he found it. That's rare.",
     author: "Joanne M.",
     location: "Largo, FL",
     service: "Multi-visit Client",
   },
   {
     quote: "Hauled a garage worth of junk in a single afternoon.",
-    body: "After my dad passed, my brothers and I had to clear out his garage in Pinellas Park. Forty years of accumulation. Nick and his crew showed up with a trailer, gave us a flat price for the whole load, and were done in one day. They were respectful, careful with anything we flagged to keep, and the price was fair. Saved us a week.",
+    body: "After my dad passed, my brothers and I had to clear out his garage in Pinellas Park. Forty years of accumulation. Nik and his crew showed up with a trailer, gave us a flat price for the whole load, and were done in one day. They were respectful, careful with anything we flagged to keep, and the price was fair. Saved us a week.",
     author: "Mike R.",
     location: "Pinellas Park, FL",
     service: "Cleanup & Hauling",

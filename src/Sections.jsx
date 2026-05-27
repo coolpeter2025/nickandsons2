@@ -242,7 +242,7 @@ function FounderNote() {
               genuinely excited to wake up in a house that fits you.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--gray-600)", margin: "0 0 28px" }}>
-              We invite you to experience the Nick &amp; Sons difference. Thank you
+              We invite you to experience the Nik &amp; Sons difference. Thank you
               for inviting us into your home.
             </p>
             <p style={{
@@ -459,7 +459,7 @@ function Newsletter() {
           letterSpacing: "-0.02em", margin: "0 0 20px", color: "#fff",
         }}>
           Stay up-to-date with the latest from{" "}
-          <em style={{ fontStyle: "italic", color: "var(--accent)" }}>Nick &amp; Sons.</em>
+          <em style={{ fontStyle: "italic", color: "var(--accent)" }}>Nik &amp; Sons.</em>
         </h2>
         <p style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,.8)", margin: "0 0 32px" }}>
           Sign up with your email to hear about seasonal offers,
@@ -539,7 +539,7 @@ function Footer({ onNavigate }) {
           <div>
             <window.Logo dark onClick={() => onNavigate("home")} />
             <p style={{ color: "rgba(255,255,255,.65)", fontSize: 14, lineHeight: 1.7, margin: "20px 0 18px", maxWidth: 320 }}>
-              Nick &amp; Sons is a family-owned handyman service based in
+              Nik &amp; Sons is a family-owned handyman service based in
               St. Petersburg, serving Tampa Bay and the surrounding areas —
               from Clearwater to Sarasota, Wesley Chapel to Lakeland.
               We help homeowners knock out the lists they've been putting off,
@@ -575,7 +575,7 @@ function Footer({ onNavigate }) {
           display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
           fontSize: 12, color: "rgba(255,255,255,.45)",
         }}>
-          <p style={{ margin: 0 }}>© 2026 Nick &amp; Sons Handyman Services · {BRAND.license}</p>
+          <p style={{ margin: 0 }}>© 2026 Nik &amp; Sons Handyman Services · {BRAND.license}</p>
           <p style={{ margin: 0 }}>St. Petersburg · Seminole · Largo · Clearwater · Pinellas Park</p>
         </div>
       </div>

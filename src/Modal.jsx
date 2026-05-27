@@ -59,7 +59,7 @@ function ConsultModal({ open, onClose }) {
               </div>
               <h3 style={{ fontSize: 22, fontWeight: 500, letterSpacing: "-0.01em", margin: "0 0 10px" }}>Thank you!</h3>
               <p style={{ fontSize: 15, color: "var(--gray-600)", lineHeight: 1.6, margin: 0 }}>
-                Nick or one of the boys will reach out within one business day.
+                Nik or one of the boys will reach out within one business day.
               </p>
               <button onClick={onClose} style={{
                 marginTop: 24, padding: "12px 24px", background: "var(--accent)", color: "var(--on-accent)",
